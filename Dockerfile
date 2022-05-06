@@ -30,7 +30,7 @@ COPY root /
 COPY --from=builder /qbittorrent/qbittorrent /
 
 RUN set -ex \
-    && ls -al /qbittorrent/qbittorrent
+    && ls -al /
 
 
 # environment settings
