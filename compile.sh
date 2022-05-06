@@ -42,3 +42,8 @@ ldd /usr/local/bin/qbittorrent-nox | cut -d ">" -f 2 | grep lib | cut -d "(" -f 
 mkdir -p /qbittorrent/qbittorrent
 tar -xvf /qbittorrent/qbittorrent.tar -C /qbittorrent/qbittorrent
 cp --parents /usr/local/bin/qbittorrent-nox /qbittorrent/qbittorrent
+ls -al /qbittorrent/qbittorrent
+mkdir -p /qbittorrent/qbittorrent/usr
+mv /qbittorrent/qbittorrent/bin /qbittorrent/qbittorrent/usr/ || true
+mv /qbittorrent/qbittorrent/lib /qbittorrent/qbittorrent/usr/ || true
+mv /qbittorrent/qbittorrent/sbin /qbittorrent/qbittorrent/usr/ || true
