@@ -44,6 +44,5 @@ tar -xvf /qbittorrent/qbittorrent.tar -C /qbittorrent/qbittorrent
 cp --parents /usr/local/bin/qbittorrent-nox /qbittorrent/qbittorrent
 ls -al /qbittorrent/qbittorrent
 mkdir -p /qbittorrent/qbittorrent/usr
-mv /qbittorrent/qbittorrent/bin /qbittorrent/qbittorrent/usr/ || true
+mv /qbittorrent/qbittorrent/lib64 /qbittorrent/qbittorrent/usr/ || true
 mv /qbittorrent/qbittorrent/lib /qbittorrent/qbittorrent/usr/ || true
-mv /qbittorrent/qbittorrent/sbin /qbittorrent/qbittorrent/usr/ || true
