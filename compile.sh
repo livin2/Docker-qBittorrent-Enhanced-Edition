@@ -33,7 +33,7 @@ cd /qbittorrent
 git clone https://github.com/c0re100/qBittorrent-Enhanced-Edition.git
 cd qBittorrent-Enhanced-Edition
 git checkout release-${QBV}
-./configure CXXFLAGS="-std=c++14" --disable-gui --disable-debug
+./configure CXXFLAGS="-std=c++14" --disable-gui --disable-debug --with-boost-libdir=/usr/lib
 make clean && make -j$(nproc)
 make install
 
@@ -47,4 +47,4 @@ mkdir -p /qbittorrent/qbittorrent/usr
 mv /qbittorrent/qbittorrent/lib64 /qbittorrent/qbittorrent/usr/ || true
 mv /qbittorrent/qbittorrent/lib /qbittorrent/qbittorrent/usr/ || true
 ls -al /qbittorrent/qbittorrent/usr/
-ls -al /qbittorrent/qbittorrent/usr/local/bin/ || echo "ls bin failed"
+ls -al /qbittorrent/qbittorrent/usrlocal/bin/ || echo "ls bin failed"
