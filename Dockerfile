@@ -6,9 +6,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 WORKDIR /qbittorrent
 
 RUN set -ex \
-    && apt -y update \
+    && apt -y -qq update \
     && DEBIAN_FRONTEND=noninteractive \
-    && apt -y install build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev \
+    && apt -y -qq install build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev \
     libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev \
     qtbase5-dev qttools5-dev libqt5svg5-dev
 
