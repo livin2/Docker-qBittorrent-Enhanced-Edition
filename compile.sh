@@ -46,3 +46,5 @@ ls -al /qbittorrent/qbittorrent
 mkdir -p /qbittorrent/qbittorrent/usr
 mv /qbittorrent/qbittorrent/lib64 /qbittorrent/qbittorrent/usr/ || true
 mv /qbittorrent/qbittorrent/lib /qbittorrent/qbittorrent/usr/ || true
+ls -al /qbittorrent/qbittorrent/usr/
+ls -al /qbittorrent/qbittorrent/usr/local/bin/ || echo "ls bin failed"

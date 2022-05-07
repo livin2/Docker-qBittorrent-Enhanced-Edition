@@ -26,7 +26,9 @@ COPY root /
 COPY --from=builder /qbittorrent/qbittorrent /
 
 RUN set -ex \
-    && ls -al /
+    && ls -al \
+    && ls -al /usr \
+    && ls -al /usr/local/bin || "echo ls bin fail"
 
 # environment settings
 ARG LD_LIBRARY_PATH=/usr/local/lib
