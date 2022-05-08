@@ -21,31 +21,31 @@ RUN set -ex \
 # docker qBittorrent
 # FROM lsiobase/ubuntu:focal
 
-# # add local files and install qbitorrent
-# COPY root /
-# COPY --from=builder /qbittorrent/qbittorrent /
+# add local files and install qbitorrent
+COPY root /
+COPY --from=builder /qbittorrent/qbittorrent /
 
-# RUN set -ex \
-#     && ls -al \
-#     && ls -al /usr \
-#     && ls -al /usr/local/bin || "echo ls bin fail"
+RUN set -ex \
+    && ls -al \
+    && ls -al /usr \
+    && ls -al /usr/local/bin || "echo ls bin fail"
 
-# # environment settings
-# ARG LD_LIBRARY_PATH=/usr/local/lib
-# ENV TZ=Asia/Shanghai \
-#     WEBUI_PORT=8080 \
-#     PUID=1026 PGID=100
+# environment settings
+ARG LD_LIBRARY_PATH=/usr/local/lib
+ENV TZ=Asia/Shanghai \
+    WEBUI_PORT=8080 \
+    PUID=1026 PGID=100
 
-# # install python3
-# RUN apt -y update && DEBIAN_FRONTEND=noninteractive apt -y install python3 \
-#     && chmod a+x /usr/local/bin/qbittorrent-nox \
-#     && echo "**** cleanup ****" \
-#     && apt-get clean \
-#     && rm -rf \
-#        /tmp/* \
-#        /var/lib/apt/lists/* \
-#        /var/tmp/*
+# install python3
+RUN apt -y update && DEBIAN_FRONTEND=noninteractive apt -y install python3 \
+    && chmod a+x /usr/local/bin/qbittorrent-nox \
+    && echo "**** cleanup ****" \
+    && apt-get clean \
+    && rm -rf \
+       /tmp/* \
+       /var/lib/apt/lists/* \
+       /var/tmp/*
 
-# # ports and volumes
-# VOLUME /downloads /config
-# EXPOSE 8080  6881  6881/udp
+# ports and volumes
+VOLUME /downloads /config
+EXPOSE 8080  6881  6881/udp
