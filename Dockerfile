@@ -19,7 +19,7 @@ RUN set -ex \
     && chmod +x compile.sh && bash compile.sh
 
 # docker qBittorrent
-# FROM lsiobase/ubuntu:focal
+FROM lsiobase/ubuntu:focal
 
 # add local files and install qbitorrent
 COPY root /
