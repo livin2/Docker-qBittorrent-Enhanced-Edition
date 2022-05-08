@@ -42,12 +42,12 @@ ls -al /usr/lib/
 
 # packing qbittorrent
 ldd /usr/local/bin/qbittorrent-nox | cut -d ">" -f 2 | grep lib | cut -d "(" -f 1 | xargs tar -chvf /qbittorrent/qbittorrent.tar
-# mkdir -p /qbittorrent/qbittorrent
-# tar -xvf /qbittorrent/qbittorrent.tar -C /qbittorrent/qbittorrent
-# cp --parents /usr/local/bin/qbittorrent-nox /qbittorrent/qbittorrent
-# ls -al /qbittorrent/qbittorrent
-# mkdir -p /qbittorrent/qbittorrent/usr
-# mv /qbittorrent/qbittorrent/lib64 /qbittorrent/qbittorrent/usr/ || true
-# mv /qbittorrent/qbittorrent/lib /qbittorrent/qbittorrent/usr/ || true
-# ls -al /qbittorrent/qbittorrent/usr/
-# ls -al /qbittorrent/qbittorrent/usrlocal/bin/ || echo "ls bin failed"
+mkdir -p /qbittorrent/qbittorrent
+tar -xvf /qbittorrent/qbittorrent.tar -C /qbittorrent/qbittorrent
+cp --parents /usr/local/bin/qbittorrent-nox /qbittorrent/qbittorrent
+ls -al /qbittorrent/qbittorrent
+mkdir -p /qbittorrent/qbittorrent/usr
+mv /qbittorrent/qbittorrent/lib64 /qbittorrent/qbittorrent/usr/ || true
+mv /qbittorrent/qbittorrent/lib /qbittorrent/qbittorrent/usr/ || true
+ls -al /qbittorrent/qbittorrent/usr/
+ls -al /qbittorrent/qbittorrent/usrlocal/bin/ || echo "ls bin failed"
