@@ -38,6 +38,6 @@ jobs:
         with:
           file: ./Dockerfile
           platforms: linux/amd64
-          push: false
+          push: true
           tags: |
-            superng6/qbittorrentee:${{ steps.set-version.outputs.version }}
+            livin2/qbittorrentee:${{ steps.set-version.outputs.version }}
