@@ -33,7 +33,7 @@ cd /qbittorrent
 git clone https://github.com/c0re100/qBittorrent-Enhanced-Edition.git
 cd qBittorrent-Enhanced-Edition
 git checkout release-${QBV}
-./configure CXXFLAGS="-std=c++14" --disable-gui --disable-debug --with-boost-libdir=/usr/lib/x86_64-linux-gnu
+./configure CXXFLAGS="-std=c++14" --disable-gui --disable-debug ${ARCH} #--with-boost-libdir=/usr/lib/x86_64-linux-gnu
 make clean && make -j$(nproc)
 make install
 
